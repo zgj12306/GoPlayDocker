@@ -20,12 +20,12 @@
 ### 挂载磁盘
 1. 首先在windows上将项目的目录文件夹设置成共享文件夹
 2. 在虚拟机上新建项目目录 `sudo mkdir -p /opt/htdocs2/`
-3. 挂载目录 `sudo mount -t cifs //192.168.50.29/GoPlay /opt/htdocs2 -o username=你的windows用户名,password=你的windows密码,rw,uid=0,gid=0,dir_mode=0777,file_mode=0777`
+3. 挂载目录 `sudo mount -t cifs //XXXX/windows本地的项目目录 /opt/htdocs2 -o username=你的windows用户名,password=你的windows密码,rw,uid=0,gid=0,dir_mode=0777,file_mode=0777`
 4. cd /opt/htdocs2/ ls查看是否挂载成功
 
 ### 构建镜像
 1. 修改.env文件（一般不需要修改）
-2. 常用的docker和docker-compose命令  
+2. 常用的docker和docker-compose命令
     ```
     运行容器: docker-compose -f docker-compose.yml up(首次使用)
     后台运行容器: docker-compose -f docker-compose.yml up -d
@@ -41,4 +41,4 @@
 3. `sudo apt-get dist-upgrade`
 4. `sudo do-release-upgrade` 按照提示系统进行操作
 5. `sudo reboot`,检查是否升级成功 `cat /etc/issue`
-6. 升级成功后，根据当前的系统版本可进行换源操作，已解决网络延时问题。参考步骤1
+6. 升级成功后，根据当前的系统版本可进行换源操作，因为不同的版本有不同的镜像源地址。参考步骤1
