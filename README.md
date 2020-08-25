@@ -14,7 +14,7 @@
 ### 安装docker-compose
 1. 参考文档 https://docs.docker.com/compose/install/  
     注：这个过程会比较久，在下载docker-compose文件的时候可以使用daocloud的镜像源
-    `sudo sh -c "curl -L https://get.daocloud.io/docker/compose/releases/download/1.26.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose"`
+    `sudo sh -c "curl -L 'https://get.daocloud.io/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)' -o /usr/local/bin/docker-compose"`
 2. 检查docker-composes是否安装成功 `docker-compose -v`
 
 ### 挂载磁盘
