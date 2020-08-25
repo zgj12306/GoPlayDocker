@@ -36,7 +36,7 @@
 3. 可以根据自己的需要将一些常用的命令写在shell文件中，快速进行操作
 
 ### 升级ubuntu系统（参考）
-1. 因为国外源存在网络耗时问题，so使用国内清华大学的ubuntu镜像。打开`https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/` 按照提示进行换源操作。
+1. 因为国外源存在网络耗时问题，so使用国内清华大学的ubuntu镜像。打开镜像站: https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/ 按照提示进行换源操作。
 2. `sudo apt-get update`
 3. `sudo apt-get dist-upgrade`
 4. `sudo do-release-upgrade` 按照提示系统进行操作
