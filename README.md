@@ -1,8 +1,8 @@
 ## dnmp docker环境安装步骤
 
 ### 安装虚拟机
-1. 虚拟机可以使用VirtualBox或其他，这里推荐使用VirtualBox,下载文件地址：`https://mirrors.tuna.tsinghua.edu.cn/help/virtualbox/`
-2. 在虚拟机上安装linux系统。系统最好使用ubuntu，因为测试环境和线上也是使用ubuntu，具体按照步骤可以参考网上。这里附上清华大学的镜像下载地址：`https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/16.04/`
+1. 虚拟机可以使用VirtualBox或其他，这里推荐使用VirtualBox,下载文件地址：https://mirrors.tuna.tsinghua.edu.cn/help/virtualbox/
+2. 在虚拟机上安装linux系统。系统最好使用ubuntu，因为测试环境和线上也是使用ubuntu，具体按照步骤可以参考网上。这里附上清华大学的镜像下载地址：https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/16.04/
 3. docker环境的安装需要ubuntu系统在16.04版本以上，如果不是，要先进行升级。 查看ubuntu的版本号 `cat /etc/issue`,升级ubuntu系统可参考最下面教程。
 
 ### 安装docker
