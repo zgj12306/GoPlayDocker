@@ -85,8 +85,8 @@ services:
       - ${PHP56_LOG_DIR}:/var/log/php
       - ${DATA_DIR}/composer:/var/composer
       ### srv tmp
-      - ${SRV_DIR}:/srv:ro
-      - ${TMP_DIR}:/tmp:ro
+      - ${SRV_DIR}:/srv:rw
+      - ${TMP_DIR}:/tmp:rw
     restart: always
     cap_add:
       - SYS_PTRACE
