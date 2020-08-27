@@ -35,6 +35,10 @@
     ```
 3. 可以根据自己的需要将一些常用的命令写在shell文件中，快速进行操作
 
+### 常见问题
+1. 开机自动挂载共享目录 `//XXXX/windows本地的项目目录 /opt/htdocs2 cifs username=你的windows用户,password=你的windows密码,rw,uid=0,gid=0,dir_mode=0777,file_mode=0777`
+2. windows10以上版本 `sudo mount -t cifs //XXXX/windows本地的项目目录 /opt/htdocs2 -o username=你的windows用户名,password=你的windows密码,rw,uid=0,gid=0,dir_mode=0777,file_mode=0777,vers=2.0`
+
 ### 升级ubuntu系统（参考）
 1. 因为国外源存在网络耗时问题，so使用国内清华大学的ubuntu镜像。打开镜像站: https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/ 按照提示进行换源操作。
 2. `sudo apt-get update`
