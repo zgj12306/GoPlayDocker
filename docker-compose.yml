@@ -13,7 +13,7 @@ services:
       - "${NGINX_HTTPS_HOST_PORT}:443"
     volumes:
       - ${SOURCE_DIR}:/opt/htdocs2:rw
-      - ${SOURCE_DIR}:/opt/htdocs3:rw
+      - ${SOURCE_DIR}:/opt/htdocs4:rw
       - ${NGINX_SSL_CERTIFICATE_DIR}:/ssl:rw
       - ${NGINX_CONFD_DIR}:/etc/nginx/conf.d/:rw
       - ${NGINX_CONF_FILE}:/etc/nginx/nginx.conf:ro
@@ -64,6 +64,7 @@ services:
       - 9501
     extra_hosts:
       - "bus.goplay.com:172.17.0.1"
+      - "bus-i18n.goplay.com:172.17.0.1"
       - "reg-sak.goplay.com:120.92.142.118"
       - "openapi-sak.goplay.com:120.92.142.118"
       - "reg.goplay.com:14.152.59.199"
@@ -79,7 +80,7 @@ services:
       - "sdkapi.koekoi.com:14.152.59.199"
     volumes:
       - ${SOURCE_DIR}:/opt/htdocs2/:rw
-      - ${SOURCE_DIR}:/opt/htdocs3/:rw
+      - ${SOURCE_DIR}:/opt/htdocs4/:rw
       - ${PHP56_PHP_CONF_FILE}:/usr/local/etc/php/php.ini:ro
       - ${PHP56_FPM_CONF_FILE}:/usr/local/etc/php-fpm.d/www.conf:rw
       - ${PHP56_LOG_DIR}:/var/log/php
