@@ -1,2 +1,0 @@
--- 2021-02-25 10:24:29 (1)GoPlayBundle\EventListener\UserCenter\Api\UserCenterSdkSubscriber->checkUserLogin
-[[0;36mINFO[0m] checkUserLogin decode token err, bid='609329',device='c06de21425466d86',loginToken='b94786cf0a606575d1884588c4a5530c',accessTokenValue=NULL
