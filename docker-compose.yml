@@ -118,7 +118,7 @@ services:
 #      - "${MYSQL5_HOST_PORT}:3306"
 #    volumes:
 #      - ${MYSQL5_CONF_FILE}:/etc/mysql/conf.d/mysql.cnf:ro
-#      - ${DATA_DIR}/mysql5:/var/lib/mysql/:rw
+#      - ${DATA_DIR}/mysql5:/var/lib/mysql5/:rw
 #    restart: always
 #    networks:
 #      - default
