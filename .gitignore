@@ -4,3 +4,4 @@ nohup.out
 www/*
 !www/localhost/
 logs/*
+*
