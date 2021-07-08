@@ -4,3 +4,5 @@ nohup.out
 www/*
 !www/localhost/
 logs/*
+services/nginx/ssl/*
+services/nginx/conf.d/*
