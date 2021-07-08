@@ -6,3 +6,5 @@ www/*
 logs/*
 services/nginx/ssl/*
 services/nginx/conf.d/*
+/services/nginx/ssl/localhost/
+/services/nginx/ssl/goplay/
