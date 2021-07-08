@@ -47,6 +47,8 @@ services:
       - ${PHP_LOG_DIR}:/var/log/php
       - ${DATA_DIR}/composer:/tmp/composer
     restart: always
+    environment:
+      - PHP_IDE_CONFIG=${PHP_IDE_CONFIG}
     cap_add:
       - SYS_PTRACE
     networks:
@@ -69,6 +71,7 @@ services:
       - "bus-i18n.goplay.com:172.27.0.2"
       - "paidashi2.bus.aipai.com:172.27.0.2"
       - "paycenter.bus.aipai.com:172.27.0.2"
+      - "bus.coolcut.tv:172.27.0.2"
       - "reg-sak.goplay.com:120.92.142.118"
       - "reg-sak-i18n.goplay.com:120.92.142.118"
       - "openapi-sak.goplay.com:120.92.142.118"
@@ -92,12 +95,33 @@ services:
       - ${SRV_DIR}:/srv:rw
       - ${TMP_DIR}:/tmp:rw
     restart: always
+    environment:
+      - PHP_IDE_CONFIG=${PHP_IDE_CONFIG}
     cap_add:
       - SYS_PTRACE
     networks:
       extnetwork:
           ipv4_address: 172.27.0.3
 
+
+### PYTHON Server #########################################
+  python:
+    build:
+      context: ./services/python3
+    container_name: python3
+    volumes:
+      - ${PYTHON_CODE_PATH_HOST}:/usr/src/app
+    restart: always
+    ports:
+      - "8001:8001"
+      - "8002:8002"
+      - "8003:8003"
+      - "8004:8004"
+      - "10022:22"
+    networks:
+      extnetwork:
+        ipv4_address: 172.27.0.6
+    tty: true
 
 #  mysql:
 #    image: mysql:${MYSQL_VERSION}
@@ -116,20 +140,20 @@ services:
 #      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
 #      TZ: "$TZ"
 
-#  mysql5:
-#    image: mysql:${MYSQL5_VERSION}
-#    container_name: mysql5
-#    ports:
-#      - "${MYSQL5_HOST_PORT}:3306"
-#    volumes:
-#      - ${MYSQL5_CONF_FILE}:/etc/mysql/conf.d/mysql.cnf:ro
-#      - ${DATA_DIR}/mysql5:/var/lib/mysql5/:rw
-#    restart: always
-#    networks:
-#      - default
-#    environment:
-#      MYSQL_ROOT_PASSWORD: "${MYSQL5_ROOT_PASSWORD}"
-#      TZ: "$TZ"
+  mysql5:
+    image: mysql:${MYSQL5_VERSION}
+    container_name: mysql5
+    ports:
+      - "${MYSQL5_HOST_PORT}:3306"
+    volumes:
+      - ${MYSQL5_CONF_FILE}:/etc/mysql/conf.d/mysql.cnf:ro
+      - ${DATA_DIR}/mysql5:/var/lib/mysql5/:rw
+    restart: always
+    networks:
+      - default
+    environment:
+      MYSQL_ROOT_PASSWORD: "${MYSQL5_ROOT_PASSWORD}"
+      TZ: "$TZ"
 
 #  openresty:
 #    image:  openresty/openresty:${OPENRESTY_VERSION}
